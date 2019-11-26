@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 
 public class Bullet
 {
-    public static final Image BulletImage = new Image("GameFiles/Image/Entities Image/NormalBullet.png");
+    public static final Image BulletImage = new Image("GameFiles/Image/Entities Image/NormalBullet GIF.gif");
     public static ImageView ViewBullet;
     public static final double speed = Settings.NORMAL_BULLET_SPEED;
     public static double damage;
@@ -71,23 +71,4 @@ public class Bullet
         this.x = x;
         this.y = y;
     }
-    /*public void Move(Coordinate coordinate1,Coordinate coordinate2,double time)
-    {
-        double S = Math.sqrt((coordinate2.x - coordinate1.x) * (coordinate2.x - coordinate1.x) + (coordinate2.y - coordinate1.y) * (coordinate2.y - coordinate1.y));
-        double XVelocity = (coordinate2.x - coordinate1.x) / time;
-        double YVelocity = (coordinate2.y - coordinate1.y) / time;
-        boolean Direction = true;
-        while(Direction == true)
-        {
-            if (this.x == x && this.y == y)
-            {
-                Direction = false;
-            }
-            else
-            {
-                this.x = this.x + XVelocity;
-                this.y = this.y + YVelocity;
-            }
-        }
-    }*/
 }

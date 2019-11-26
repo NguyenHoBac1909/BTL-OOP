@@ -22,7 +22,7 @@ public abstract class SpriteBase
     double dy;
     double dr;
 
-    public double Health;
+    public long Health;
     double damage;
 
     boolean removable = false;
@@ -32,7 +32,7 @@ public abstract class SpriteBase
 
     boolean canMove = true;
 
-    public SpriteBase(Group EntitiesGroup, Image image, double x, double y, double r, double dx, double dy, double dr, double Health, double damage)
+    public SpriteBase(Group EntitiesGroup, Image image, double x, double y, double r, double dx, double dy, double dr, long Health, double damage)
     {
         this.EntitiesGroup = EntitiesGroup;
         this.image = image;
@@ -148,9 +148,9 @@ public abstract class SpriteBase
         this.image = image;
     }
 
-    public double getHealth()
+    public long getHealth()
     {
-        return Health;
+        return this.Health;
     }
 
     public double getDamage()
@@ -163,7 +163,7 @@ public abstract class SpriteBase
         this.damage = damage;
     }
 
-    public void setHealth(double health)
+    public void setHealth(long health)
     {
         this.Health = health;
     }
@@ -187,30 +187,6 @@ public abstract class SpriteBase
         y += dy;
         r += dr;
     }
-    /*
-    public void Move(Coordinate coordinate1,Coordinate coordinate2,double time)
-    {
-        double S = Math.sqrt((coordinate2.x - coordinate1.x) * (coordinate2.x - coordinate1.x) + (coordinate2.y - coordinate1.y) * (coordinate2.y - coordinate1.y));
-        double XVelocity = (coordinate2.x - coordinate1.x) / time;
-        double YVelocity = (coordinate2.y - coordinate1.y) / time;
-        boolean Direction = true;
-        while(Direction == true)
-        {
-            if (this.x == x && this.y == y)
-            {
-                Direction = false;
-            }
-            else
-            {
-                this.x = this.x + XVelocity;
-                this.y = this.y + YVelocity;
-                this.imageView.setLayoutX(this.x);
-                this.imageView.setLayoutY(this.y);
-            }
-        }
-    }
-    */
-
     public boolean isAlive()
     {
         return Double.compare(this.Health, 0) > 0;
@@ -290,5 +266,5 @@ public abstract class SpriteBase
         this.canMove = false;
     }
 
-    public abstract void checkRemovability();
+    // public abstract void checkRemovability();
 }

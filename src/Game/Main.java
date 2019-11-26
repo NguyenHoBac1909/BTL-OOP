@@ -35,6 +35,7 @@ public class Main extends Application implements GameEntities
     public void start(Stage primaryStage) throws Exception
     {
         Parent root = FXMLLoader.load(getClass().getResource("Game.fxml"));
+
         //Name of the Game
         Text GameName = new Text();
         GameName.setText("Tower Defense");
@@ -121,6 +122,7 @@ public class Main extends Application implements GameEntities
         CreditButton.setOnMouseClicked(e ->
                 {
                     MainSoundPlayer.stop();
+                    //Credits Image
                     Image CreditsImage = new Image("GameFiles/Image/Game Credits.png");
                     ImageView ViewCredits = new ImageView(CreditsImage);
                     ViewCredits.setX(0);
@@ -128,13 +130,22 @@ public class Main extends Application implements GameEntities
                     ViewCredits.setFitHeight(Config.HEIGHT);
                     ViewCredits.setFitWidth(Config.WIDTH);
                     MainGroup.getChildren().add(ViewCredits);
+
+                    //Credits Sound
+                    String CreditsPath = "C:\\Users\\ADMIN\\IdeaProjects\\Tower of Defense FX\\src\\GameFiles\\Sound\\Credit Song.mp3";
+                    Media CreditsSound = new Media(new File(CreditsPath).toURI().toString());
+                    MediaPlayer PlayCreditsSound = new MediaPlayer(CreditsSound);
+                    PlayCreditsSound.setAutoPlay(true);
+                    MediaView ViewCreditsSound = new MediaView(PlayCreditsSound);
+                    MainGroup.getChildren().add(ViewCreditsSound);
                 }
         );
 
         //Group of things
 
         primaryStage.setTitle("Tower Defense");
-        primaryStage.setScene(new Scene(MainGroup, 1024, 768));
+        Scene MainScene = new Scene(MainGroup, Config.WIDTH, Config.HEIGHT);
+        primaryStage.setScene(MainScene);
         primaryStage.show();
     }
     public static void main(String[] args)

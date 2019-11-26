@@ -24,13 +24,21 @@ public interface GameEntities
 
     //Enemies
     BossEnemy[] BOSS_ENEMIES = new BossEnemy[Config.MaxBossEnemyNumber];
+    TankerEnemy[]TANKER_ENEMIES = new TankerEnemy[Config.MaxTankerEnemyNumber];
     NormalEnemy[] NORMAL_ENEMIES = new NormalEnemy[Config.MaxNormalEnemyNumber];
     SmallerEnemy[] SMALLER_ENEMIES = new SmallerEnemy[Config.MaxSmallerEnemyNumber];
 
     List<BossEnemy> BossEnemies = new ArrayList<BossEnemy>();
+    List<TankerEnemy> TankerEnemies = new ArrayList<TankerEnemy>();
     List<NormalEnemy> NormalEnemies = new ArrayList<NormalEnemy>();
     List<SmallerEnemy> SmallerEnemies = new ArrayList<SmallerEnemy>();
     List<Enemy> Enemies = new ArrayList<Enemy>();
 
+    //Health Bars
+    List<HealthBar> SmallerEnemiesHealthBars = new ArrayList<HealthBar>();
+    List<HealthBar> NormalEnemiesHealthBars = new ArrayList<HealthBar>();
+    List<HealthBar> BossEnemiesHealthBars = new ArrayList<HealthBar>();
+
+    //KeyFrame
     KeyFrame[] Keys = new KeyFrame[Config.MaxEnemies];
 }

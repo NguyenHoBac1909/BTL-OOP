@@ -9,8 +9,8 @@ import java.io.FileNotFoundException;
 
 public class NormalEnemy extends Enemy
 {
-    public final Image NormalEnemyImage = new Image("GameFiles/Image/Entities Image/NormalEnemy.png");
-    public NormalEnemy(Group group, Image image, double x, double y, double r, double dx, double dy, double dr, double health, double shield, double damage)
+    public final Image NormalEnemyImage = new Image("GameFiles/Image/Entities Image/NormalEnemy GIF.gif");
+    public NormalEnemy(Group group, Image image, double x, double y, double r, double dx, double dy, double dr, long health, double shield, double damage)
     {
         super(group, image, x, y, r, dx, dy, dr, health, shield, damage);
         this.image = NormalEnemyImage;
